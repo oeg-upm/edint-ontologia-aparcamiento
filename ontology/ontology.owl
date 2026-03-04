@@ -1,0 +1,809 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento"
+     versionIRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento/0.1.0">
+    <Prefix name="" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura"/>
+    <Prefix name="gsp" IRI="http://www.opengis.net/ont/geosparql#"/>
+    <Prefix name="mod" IRI="https://w3id.org/mod#"/>
+    <Prefix name="org" IRI="http://www.w3.org/ns/org#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="sosa" IRI="http://www.w3.org/ns/sosa/"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="esadm" IRI="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"/>
+    <Prefix name="escjr" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#"/>
+    <Prefix name="esdir" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"/>
+    <Prefix name="esbici" IRI="http://vocab.linkeddata.es/datosabiertos/def/transporte/bicicleta-publica#"/>
+    <Prefix name="s4bldg" IRI="http://w3id.org/def/saref4bldg#"/>
+    <Prefix name="schema" IRI="http://schema.org/"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="edintmi" IRI="http://vocab.linkeddata.es/datosabiertos/def/movilidadinteligente#"/>
+    <Prefix name="esequip" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#"/>
+    <Prefix name="edintveh" IRI="http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#"/>
+    <Prefix name="esequip-kos" IRI="http://vocab.linkeddata.es/datosabiertos/kos/urbanismo-infraestructuras/equipamiento/tipo-equipamiento/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal>2026-03-03</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal>Daniel Doña</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal>Edna Ruckhaus</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal>Lucía Sánchez</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal>Oscar Corcho</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal>Socorro Bernardos</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal xml:lang="es">La ontología de Aparcamiento representa los aparcamientos en la vía pública y los que etán fuera de la vía pública, los cuales a su vez pueden ser públicos o privados. 
+Los aparcamientos son una intalación más de la infraestructura de la ciudad por lo cual  la ontología está relacionada con la ontología de Infraestructura. Además, se representan sus puntos de acceso para lo cual se enlaza a la representación de sensores de la infraestructura.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal xml:lang="en">The Parking ontology represents on-street and off-street parking, which can be either public or private. Parking facilities are part of the city&apos;s infrastructure, and therefore this ontology is related to the Infrastructure ontology. Furthermore, their access points are represented, as a relationship to the infrastructure&apos;s sensor representation.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <IRI>https://creativecommons.org/licenses/by/4.0/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="es">Ontología de Aparcamiento</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="en">The Parking Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal>edintapar</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <IRI>#</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>0.1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OffStreetParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnStreetParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingFee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingSpot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingSpotsByPermitType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingSpotsByVehicleType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gsp:Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.opengis.net/ont/sf#Point"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="edintveh:permitType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="edintveh:vehicleType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParkingFee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParkingSpot"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpotsByParkingPermitType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpotsByVehicleType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfZone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#providesPublicService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numberOfParkingSpots"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://vocab.linkeddata.es/datosabiertos/kos/edint/PermitType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://vocab.linkeddata.es/datosabiertos/kos/edint/VehicleType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:domainIncludes"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:rangeIncludes"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionIRI"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#example"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="mod:createdWith"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYearMonth"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OffStreetParking"/>
+        <Class IRI="#Parking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnStreetParking"/>
+        <Class IRI="#Parking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parking"/>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+        <Class abbreviatedIRI="gsp:Feature"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPartOfZone"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="edintveh:permitType"/>
+        <Class IRI="#ParkingSpotsByVehicleType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParkingFee"/>
+        <Class IRI="#Parking"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParkingSpot"/>
+        <ObjectUnionOf>
+            <Class IRI="#ParkingSpotsByPermitType"/>
+            <Class IRI="#ParkingSpotsByVehicleType"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSensor"/>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpotsByParkingPermitType"/>
+        <Class IRI="#Parking"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpotsByVehicleType"/>
+        <Class IRI="#Parking"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfZone"/>
+        <Class IRI="#OnStreetParking"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesPublicService"/>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="edintveh:permitType"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                <NamedIndividual IRI="http://vocab.linkeddata.es/datosabiertos/kos/edint/PermitType"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="edintveh:vehicleType"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                <NamedIndividual IRI="http://vocab.linkeddata.es/datosabiertos/kos/edint/VehicleType"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParkingFee"/>
+        <Class IRI="#ParkingFee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParkingSpot"/>
+        <Class IRI="#ParkingSpot"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpotsByParkingPermitType"/>
+        <Class IRI="#ParkingSpotsByPermitType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpotsByVehicleType"/>
+        <Class IRI="#ParkingSpotsByVehicleType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfZone"/>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint"/>
+        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numberOfParkingSpots"/>
+        <ObjectUnionOf>
+            <Class IRI="#Parking"/>
+            <Class IRI="#ParkingSpotsByPermitType"/>
+            <Class IRI="#ParkingSpotsByVehicleType"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#numberOfParkingSpots"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <Literal xml:lang="en">Public road zone where parking is subject to time regulation, fee payment, or other restrictions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <Literal xml:lang="es">Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <Literal xml:lang="en">Regulated parking zone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <Literal xml:lang="es">Zona de estacionamiento regulado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <Literal xml:lang="es">Area a la que se aplica una regulacion o normativa particular.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <Literal xml:lang="en">Area to which a particular regulation or policy applies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <Literal xml:lang="en">Regulated zone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <Literal xml:lang="es">Zona regulatoria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>edintveh:permitType</AbbreviatedIRI>
+        <Literal xml:lang="es">Relación entre el Grupo de plazas por tipo de permiso y la taxonomía de tipos de permiso.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>edintveh:permitType</AbbreviatedIRI>
+        <Literal xml:lang="en">Relationship between the group of places by type of permit and the taxonomy of types of permit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>edintveh:permitType</AbbreviatedIRI>
+        <Literal xml:lang="en">permit type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>edintveh:permitType</AbbreviatedIRI>
+        <Literal xml:lang="es">tipo de permiso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>edintveh:vehicleType</AbbreviatedIRI>
+        <Literal xml:lang="en">Tipo de vehículo. Los valores son conceptos SKOS que pertenecen a una lista controlada de tipos de vehículo (por ejemplo, turismo, furgoneta, caravana, etc.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>edintveh:vehicleType</AbbreviatedIRI>
+        <Literal xml:lang="es">Type of vehicle. The range is a SKOS concept that belongs to a controlled list of permit types (e.g., van, truck, caravan, etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>edintveh:vehicleType</AbbreviatedIRI>
+        <Literal xml:lang="es">tipo de vehiculo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>edintveh:vehicleType</AbbreviatedIRI>
+        <Literal xml:lang="en">vehicle type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OffStreetParking</IRI>
+        <Literal xml:lang="es">Aparcamiento fuera de la vía pública. Incluye instalaciones o superficies de aparcamiento.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OffStreetParking</IRI>
+        <Literal xml:lang="en">Off-street parking, including parking facilities or parking surfaces.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OffStreetParking</IRI>
+        <Literal xml:lang="es">Aparcamiento fuera de la vía pública</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OffStreetParking</IRI>
+        <Literal xml:lang="en">Off-street parking</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnStreetParking</IRI>
+        <Literal xml:lang="es">Aparcamiento en la vía pública que inluye plazas para residentes, no residentes, libres, carga y descarga, entre otros.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnStreetParking</IRI>
+        <Literal xml:lang="en">On-street parking that includes spaces for residents, non-residents, free spaces, loading and unloading, among others.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnStreetParking</IRI>
+        <Literal xml:lang="es">Aparcamiento en la vía pública</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnStreetParking</IRI>
+        <Literal xml:lang="en">On-street parking</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Parking</IRI>
+        <Literal xml:lang="es">Aparcamiento para diferentes tipos de vehículo que incluye instalaciones o superficies de aparcamiento fuera de la vía pública o zonas de aparcamiento en la vía pública para residentes, no residentes o libres.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Parking</IRI>
+        <Literal xml:lang="en">Parking for different types of vehicles, including off-street parking facilities or on-street parking zones for residents, non-residents, or free parking.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Parking</IRI>
+        <Literal xml:lang="es">Aparcamiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Parking</IRI>
+        <Literal xml:lang="en">Parking</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingFee</IRI>
+        <Literal xml:lang="en">Parking fee that essentially covers the right to park the vehicle in an authorized space for a certain time period.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingFee</IRI>
+        <Literal xml:lang="es">Tarifa de un aparcamiento que cubre fundamentalmente el derecho a estacionar el vehículo en un espacio autorizado durante un tiempo determinado.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingFee</IRI>
+        <Literal xml:lang="en">Parking fee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingFee</IRI>
+        <Literal xml:lang="es">Tarifa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingSpot</IRI>
+        <Literal xml:lang="en">Individual parking spot in an on-street or off-street parking.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingSpot</IRI>
+        <Literal xml:lang="es">Plaza individual de estacionamiento dentro o fuera de la vía pública.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingSpot</IRI>
+        <Literal xml:lang="en">Parking spot</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingSpot</IRI>
+        <Literal xml:lang="es">Plaza (de aparcamiento)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingSpotsByPermitType</IRI>
+        <Literal xml:lang="en">Group of parking spots for each type of permit, for example Resident. It indicates the number of slots  for each type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingSpotsByPermitType</IRI>
+        <Literal xml:lang="es">Grupo de plazas por cada tipo de permiso, por ejemplo Residente. Indica el número de plazas por cada tipo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingSpotsByPermitType</IRI>
+        <Literal xml:lang="en">Group of parking spots by type of permit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingSpotsByPermitType</IRI>
+        <Literal xml:lang="es">Grupo de plazas por tipo de permiso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingSpotsByVehicleType</IRI>
+        <Literal xml:lang="en">Group of parking spots for each type of vehicle: cars, motorcycles, bicycles, among others. It indicates the number of slots per type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingSpotsByVehicleType</IRI>
+        <Literal xml:lang="es">Grupo de plazas de aparcamiento para cada tipo de vehículo: coches, motocicletas, biciletas, entre otros. Indica el número de plazas por tipo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingSpotsByVehicleType</IRI>
+        <Literal xml:lang="en">Group of parking spots by vehicle type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ParkingSpotsByVehicleType</IRI>
+        <Literal xml:lang="es">Grupo de plazas por tipo de vehículo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasParkingFee</IRI>
+        <Literal xml:lang="es">Relación entre un aparcamiento y su tarifa.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasParkingFee</IRI>
+        <Literal xml:lang="en">Relationship between a parking and its fee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasParkingFee</IRI>
+        <Literal xml:lang="en">has parking fee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasParkingFee</IRI>
+        <Literal xml:lang="es">tiene tarifa de aparcamiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasParkingSpot</IRI>
+        <Literal xml:lang="es">Relación entre el aparcamiento o el grupo de plazas de un aparcamiento y las plazas específicas que contiene.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasParkingSpot</IRI>
+        <Literal xml:lang="en">Relationship between  the parking or a group of parking spots and the specific spots it contains.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasParkingSpot</IRI>
+        <Literal xml:lang="en">has parking spot</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasParkingSpot</IRI>
+        <Literal xml:lang="es">tiene plaza de aparcamiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSensor</IRI>
+        <Literal xml:lang="es">Relación ente el punto de observación y el sensor que realiza la observación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSensor</IRI>
+        <Literal xml:lang="en">Relationship between the observation point and the sensor that performs the observation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSensor</IRI>
+        <Literal xml:lang="en">has sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSensor</IRI>
+        <Literal xml:lang="es">tiene sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpotsByParkingPermitType</IRI>
+        <Literal xml:lang="es">Relación entre el Aparcamiento y su Grupo de plazas por tipo de permiso, por ejemplo Plazas de Rotación, Residentes, Movilidad Reducida, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpotsByParkingPermitType</IRI>
+        <Literal xml:lang="en">Relationship between the Parking and its Group of spaces by type of permit, for example Rotation Spaces, Residents, Reduced Mobility, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSpotsByParkingPermitType</IRI>
+        <Literal xml:lang="en">has a group of spots per type of permit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSpotsByParkingPermitType</IRI>
+        <Literal xml:lang="es">tiene grupo de plazas por tipo de permiso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpotsByVehicleType</IRI>
+        <Literal xml:lang="es">Relación entre el Aparcamiento y  su Grupo de plazas por tipo de vehículo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpotsByVehicleType</IRI>
+        <Literal xml:lang="en">Relationship between the Parking and its Group of spots by vehicle type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSpotsByVehicleType</IRI>
+        <Literal xml:lang="en">has a group of spots per type of vehicle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSpotsByVehicleType</IRI>
+        <Literal xml:lang="es">tiene grupo de plazas por tipo de vehiculo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPartOfZone</IRI>
+        <Literal xml:lang="es">Relación entre un grupo de plazas de aparcamiento en la vía pública y la zona de estacionamiento regulado a la cual pertenecen.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPartOfZone</IRI>
+        <Literal xml:lang="en">Relationship between a group of parking spaces on a street and the regulated parking zone to which they belong.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPartOfZone</IRI>
+        <Literal xml:lang="es">es parte de zona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPartOfZone</IRI>
+        <Literal xml:lang="en">is part of zone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#numberOfParkingSpots</IRI>
+        <Literal xml:lang="en">Number of parking spots. Can be used to represent the total number of spots, or the  number of spots by vehicle type or by permit type. For example, 50 spots for cars, 10 for motorcycles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#numberOfParkingSpots</IRI>
+        <Literal xml:lang="es">Número de plazas de aparcamiento. Se puede usar para representar el número total de plazas, o el número de plazas por tipo de vehículo o por tipo de permiso. Por ejemplo, 50 plazas para coches y 10 para motos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#numberOfParkingSpots</IRI>
+        <Literal xml:lang="en">number of parking spots</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#numberOfParkingSpots</IRI>
+        <Literal xml:lang="es">número de plazas de aparcamiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#providesPublicService</IRI>
+        <Literal xml:lang="en">Public service provided by a municipal facility, for example internet via wifi.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#providesPublicService</IRI>
+        <Literal xml:lang="es">Servicio público prestado por un equipamiento municipal, por ejemplo internet a través de una wifi.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#providesPublicService</IRI>
+        <Literal xml:lang="es">presta servicio público</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#providesPublicService</IRI>
+        <Literal xml:lang="en">provides public service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
+        <Literal xml:lang="es">Relación entre un elemento de la infraestructura y un punto de observación por algún sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
+        <Literal xml:lang="en">Relationship between an infrastructure element and an observation point by some sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
+        <Literal xml:lang="en">has observation point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
+        <Literal xml:lang="es">tiene punto de observación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <Literal xml:lang="es">Equipamientos a los que un ciudadano puede acudir pertenecientes a una organización pública o privadal. Un equipamiento puede ser un aparcamiento, un centro educativo, una estación de bicicleta compartida y cualquier instalación que sea un centro de salud, centro educativo, centro social, comisaría, entre otros.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <Literal xml:lang="en">Facilities that citizens can access and that belong to public or private organizations. A facility can be a parking lot, an educational center, a bike-sharing station, or any facility that serves as a health center, educational center, community center, police station, among others.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <Literal xml:lang="es">Equipamiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <Literal xml:lang="en">Facility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <Literal xml:lang="en">Points where access or counting observations can be made using sensors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <Literal xml:lang="es">Puntos en donde se pueden realizar observaciones de acceso o de conteo a través de sensores.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <Literal xml:lang="en">Observation point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <Literal xml:lang="es">Punto de observación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gsp:Feature</AbbreviatedIRI>
+        <Literal xml:lang="es">Esta clase representa el tipo &quot;feature&quot; de nivel superior. Es equivalente a GFI_Feature, definida en la norma ISO 19156:2011, y es la superclase de todos los tipos de &quot;feature&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>gsp:Feature</AbbreviatedIRI>
+        <IRI>http://www.opengis.net/spec/geosparql/1.0</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>gsp:Feature</AbbreviatedIRI>
+        <Literal xml:lang="en">Feature</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
