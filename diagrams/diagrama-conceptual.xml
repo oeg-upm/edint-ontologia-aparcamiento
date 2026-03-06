@@ -231,7 +231,7 @@
         <mxCell id="aM4D_WBH-ietGMfle2C--61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=11;" value="edintveh" vertex="1">
           <mxGeometry height="30" width="60" x="1830" y="297.37" as="geometry" />
         </mxCell>
-        <mxCell id="iyQ_uuEJQr7vTu7x2OlS-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#36393d;" value="edintinf:InfrastructureElement&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(Equipamiento)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="iyQ_uuEJQr7vTu7x2OlS-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#36393d;" value="edintinf:InfrastructureElement&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(ElementoInfraestructura)&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="170" x="730" y="322.63" as="geometry" />
         </mxCell>
         <mxCell id="e3LIUMHxESTWT-8LMcjW-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
