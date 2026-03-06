@@ -1,0 +1,30 @@
+
+# AP5: ¿Cuáles son los aparcamientos existentes en una zona regulada concreta?
+
+PREFIX edintapar: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#>
+
+SELECT ?parking
+WHERE {
+  ?parking a edintapar:OnStreetParking ;
+           edintapar:isPartOfZone <URI_DE_LA_ZONA_REGULADA> .
+}
+ORDER BY ?parking
+
+
+# Con nombre/etiqueta de la zona regulada
+
+PREFIX edintapar: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parking ?zoneLabel
+WHERE {
+  ?parking a edintapar:OnStreetParking ;
+           edintapar:isPartOfZone ?zone .
+
+  FILTER (?zone = <URI_DE_LA_ZONA_REGULADA>)
+
+  OPTIONAL { ?zone rdfs:label ?zoneLabel . }
+}
+ORDER BY ?parking
+
+

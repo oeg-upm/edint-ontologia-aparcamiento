@@ -1,0 +1,44 @@
+
+# AP4: ¿Qué tipo de permiso se requiere para aparcar en un grupo de plazas (ej. residentes, carga y descarga) de un aparcamiento?
+
+PREFIX edintapar: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#>
+PREFIX edintveh: <http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?parking ?group ?permitType ?permitLabel ?numSpots
+WHERE {
+  VALUES ?parking { <URI_DEL_APARCAMIENTO> }
+
+  # Grupo de plazas por tipo de permiso
+  ?parking edintapar:hasSpotsByParkingPermitType ?group .
+
+  # Tipo de permiso (SKOS Concept)
+  ?group edintveh:permitType ?permitType .
+
+  # Número de plazas en ese grupo
+  OPTIONAL { ?group edintapar:numberOfParkingSpots ?numSpots . }
+
+  # Etiqueta legible del tipo de permiso
+  OPTIONAL { ?permitType skos:prefLabel|rdfs:label ?permitLabel . }
+}
+ORDER BY ?permitLabel
+
+
+# Para todos los grupos de plazas
+
+PREFIX esintinfp: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructurapublica#>
+PREFIX esinfpub:  <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructuraPublica#>
+PREFIX skos:      <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?group ?groupLabel ?permitType ?permitTypeLabel
+WHERE {
+  ?group a esinfpub:ParkingSpotsByPermitType ;		
+         esintinfp:hasPermitTypeForSpots ?permitType .
+
+  OPTIONAL { ?group rdfs:label ?groupLabel }
+  OPTIONAL { ?permitType skos:prefLabel ?permitTypeLabel }
+}
+ORDER BY ?groupLabel ?permitTypeLabel
+

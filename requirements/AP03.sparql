@@ -1,0 +1,71 @@
+
+# AP3: Para un aparcamiento, ¿qué grupos de plazas existen y para qué tipo de vehículo están reservadas (ej. eléctricos, motos, PMR)?
+
+
+PREFIX edintapar: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#>
+PREFIX edintveh: <http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parking ?grupo ?vehicleType ?vehicleTypeLabel ?numSpots
+WHERE {
+  VALUES ?parking { <URI_DEL_APARCAMIENTO> }
+
+  # Grupos de plazas por tipo de vehículo
+  ?parking edintapar:hasSpotsByVehicleType ?grupo .
+
+  # Tipo de vehículo (SKOS Concept)
+  ?grupo edintveh:vehicleType ?vehicleType .
+
+  # Número de plazas
+  OPTIONAL { ?grupo edintapar:numberOfParkingSpots ?numSpots . }
+
+  # Etiqueta del tipo de vehículo (si existe). Algo análogo para resto de etiquetas si se quiere
+  OPTIONAL { ?vehicleType rdfs:label ?vehicleTypeLabel . }
+}
+ORDER BY ?vehicleTypeLabel
+
+
+# Para todos los aparcamientos
+
+PREFIX edintapar: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#>
+PREFIX edintveh: <http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parking ?grupo ?vehicleType ?vehicleTypeLabel ?numSpots
+WHERE {
+  ?parking a edintapar:Parking ;
+           edintapar:hasSpotsByVehicleType ?grupo .
+
+  ?grupo edintveh:vehicleType ?vehicleType .
+
+  OPTIONAL { ?grupo edintapar:numberOfParkingSpots ?numSpots . }
+  OPTIONAL { ?vehicleType rdfs:label ?vehicleTypeLabel . }
+}
+ORDER BY ?parking ?vehicleTypeLabel
+
+
+# Y por tipo de vehículo
+
+PREFIX esintinfp: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructurapublica#>
+PREFIX skos:      <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parking ?parkingLabel
+       ?vehicleType ?vehicleTypeLabel
+       (GROUP_CONCAT(DISTINCT ?groupLabel; SEPARATOR=", ") AS ?grupos)	# Agrupados por tipo de vehículo
+       (SUM(?numPlazas) AS ?totalPlazas)
+WHERE {
+  ?parking a esintinfp:Parking ;		# Para todos los aparcamientos
+           esintinfp:hasSpotsByVehicleType ?group .
+
+  OPTIONAL { ?parking rdfs:label ?parkingLabel }
+  OPTIONAL { ?group rdfs:label ?groupLabel }
+
+  ?group esintinfp:hasVehicleTypeForSpots ?vehicleType .
+  OPTIONAL { ?vehicleType skos:prefLabel ?vehicleTypeLabel }
+
+  OPTIONAL { ?group esintinfp:numberOfSpots ?numPlazas }
+}
+GROUP BY ?parking ?parkingLabel ?vehicleType ?vehicleTypeLabel
+ORDER BY ?parkingLabel ?vehicleTypeLabel
+

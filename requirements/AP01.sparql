@@ -1,0 +1,42 @@
+
+# AP1: ¿Cuáles son los estacionamientos disponibles y son en la vía pública o fuera de ella?
+
+PREFIX edintapar: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#>
+
+SELECT ?parking ?tipo
+WHERE {
+  {
+    ?parking a edintapar:OnStreetParking .
+    BIND("En la vía pública" AS ?tipo)
+  }
+  UNION
+  {
+    ?parking a edintapar:OffStreetParking .
+    BIND("Fuera de la vía pública" AS ?tipo)
+  }
+}
+ORDER BY ?parking
+
+# Con nombre/etiqueta
+
+PREFIX esintinfp: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructurapublica#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parking ?label ?tipo
+WHERE {
+  {
+    ?parking a esintinfp:OnStreetParking .
+    OPTIONAL { ?parking rdfs:label ?label }
+    BIND("En vía pública" AS ?tipo)
+  }
+  UNION
+  {
+    ?parking a esintinfp:OffStreetParking .
+    OPTIONAL { ?parking rdfs:label ?label }
+    BIND("Fuera de vía pública" AS ?tipo)
+  }
+}
+ORDER BY LCASE(STR(?label)) ?parking
+
+
+
