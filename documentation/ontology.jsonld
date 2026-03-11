@@ -95,7 +95,7 @@
   "@id" : "http://schema.org/rangeIncludes",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone",
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -112,10 +112,10 @@
     "@value" : "Zona de estacionamiento regulado"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone",
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -481,7 +481,7 @@
     "@value" : "is part of zone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
@@ -530,26 +530,6 @@
     "@value" : "provides public service"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relación entre un elemento de la infraestructura y un punto de observación por algún sensor."
-  }, {
-    "@language" : "en",
-    "@value" : "Relationship between an infrastructure element and an observation point by some sensor."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has observation point"
-  }, {
-    "@language" : "es",
-    "@value" : "tiene punto de observación"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -585,6 +565,26 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relación entre un elemento de la infraestructura y un punto de observación por algún sensor."
+  }, {
+    "@language" : "en",
+    "@value" : "Relationship between an infrastructure element and an observation point by some sensor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has observation point"
+  }, {
+    "@language" : "es",
+    "@value" : "tiene punto de observación"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/PermitType",

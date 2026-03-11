@@ -202,7 +202,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 :isPartOfZone rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain :OnStreetParking ;
-              rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> ;
+              rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> ;
               rdfs:comment "Relación entre un grupo de plazas de aparcamiento en la vía pública y la zona de estacionamiento regulado a la cual pertenecen."@es ,
                            "Relationship between a group of parking spaces on a street and the regulated parking zone to which they belong."@en ;
               rdfs:label "es parte de zona"@es ,
@@ -218,13 +218,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                   "provides public service"@en .
 
 
-###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> rdf:type owl:ObjectProperty ;
-                                                                                                             rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint> ;
-                                                                                                             rdfs:comment "Relación entre un elemento de la infraestructura y un punto de observación por algún sensor."@es ,
-                                                                                                                          "Relationship between an infrastructure element and an observation point by some sensor."@en ;
-                                                                                                             rdfs:label "has observation point"@en ,
-                                                                                                                        "tiene punto de observación"@es .
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> rdf:type owl:ObjectProperty ;
+                                                                                                              rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint> ;
+                                                                                                              rdfs:comment "Relación entre un elemento de la infraestructura y un punto de observación por algún sensor."@es ,
+                                                                                                                           "Relationship between an infrastructure element and an observation point by some sensor."@en ;
+                                                                                                              rdfs:label "has observation point"@en ,
+                                                                                                                         "tiene punto de observación"@es .
 
 
 ###  http://www.w3.org/2004/02/skos/core#inScheme
@@ -254,21 +254,21 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
-###  http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf <http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> ;
-                                                                                   rdfs:comment "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."@en ,
-                                                                                                "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."@es ;
-                                                                                   rdfs:label "Regulated parking zone"@en ,
-                                                                                              "Zona de estacionamiento regulado"@es .
+###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> ;
+                                                                                rdfs:comment "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."@en ,
+                                                                                             "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."@es ;
+                                                                                rdfs:label "Regulated parking zone"@en ,
+                                                                                           "Zona de estacionamiento regulado"@es .
 
 
-###  http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> rdf:type owl:Class ;
-                                                                            rdfs:comment "Area a la que se aplica una regulacion o normativa particular."@es ,
-                                                                                         "Area to which a particular regulation or policy applies."@en ;
-                                                                            rdfs:label "Regulated zone"@en ,
-                                                                                       "Zona regulatoria"@es .
+###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> rdf:type owl:Class ;
+                                                                         rdfs:comment "Area a la que se aplica una regulacion o normativa particular."@es ,
+                                                                                      "Area to which a particular regulation or policy applies."@en ;
+                                                                         rdfs:label "Regulated zone"@en ,
+                                                                                    "Zona regulatoria"@es .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#OffStreetParking

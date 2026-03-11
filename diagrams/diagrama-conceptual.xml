@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="Aparcamiento" id="TwNkGNfd34o53ypIZz1M">
-    <mxGraphModel dx="1207" dy="719" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1207" dy="721" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -231,7 +231,7 @@
         <mxCell id="aM4D_WBH-ietGMfle2C--61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=11;" value="edintveh" vertex="1">
           <mxGeometry height="30" width="60" x="1830" y="297.37" as="geometry" />
         </mxCell>
-        <mxCell id="iyQ_uuEJQr7vTu7x2OlS-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#36393d;" value="edintinf:InfrastructureElement&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(ElementoInfraestructura)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="iyQ_uuEJQr7vTu7x2OlS-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#36393d;" value="edintinf:Facility&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(Equipamiento)&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="170" x="730" y="322.63" as="geometry" />
         </mxCell>
         <mxCell id="e3LIUMHxESTWT-8LMcjW-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">

@@ -193,7 +193,7 @@ _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#OnStreetParking> .
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación entre un grupo de plazas de aparcamiento en la vía pública y la zona de estacionamiento regulado a la cual pertenecen."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship between a group of parking spaces on a street and the regulated parking zone to which they belong."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone> <http://www.w3.org/2000/01/rdf-schema#label> "es parte de zona"@es .
@@ -207,13 +207,13 @@ _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#providesPublicService> <http://www.w3.org/2000/01/rdf-schema#label> "presta servicio público"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#providesPublicService> <http://www.w3.org/2000/01/rdf-schema#label> "provides public service"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint> .
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación entre un elemento de la infraestructura y un punto de observación por algún sensor."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship between an infrastructure element and an observation point by some sensor."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "has observation point"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "tiene punto de observación"@es .
+# http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación entre un elemento de la infraestructura y un punto de observación por algún sensor."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship between an infrastructure element and an observation point by some sensor."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "has observation point"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "tiene punto de observación"@es .
 # 
 # http://www.w3.org/2004/02/skos/core#inScheme
 <http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -256,20 +256,20 @@ _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated parking zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de estacionamiento regulado"@es .
+# http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated parking zone"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de estacionamiento regulado"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area a la que se aplica una regulacion o normativa particular."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area to which a particular regulation or policy applies."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona regulatoria"@es .
+# http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area a la que se aplica una regulacion o normativa particular."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area to which a particular regulation or policy applies."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated zone"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona regulatoria"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#OffStreetParking
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#OffStreetParking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

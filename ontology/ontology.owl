@@ -7,29 +7,24 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento"
      versionIRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento/0.1.0">
-    <Prefix name="" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura"/>
+    <Prefix name="" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#"/>
     <Prefix name="gsp" IRI="http://www.opengis.net/ont/geosparql#"/>
-    <Prefix name="mod" IRI="https://w3id.org/mod#"/>
-    <Prefix name="org" IRI="http://www.w3.org/ns/org#"/>
+    <Prefix name="org" IRI="https://w3id.org/mod#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="sosa" IRI="http://www.w3.org/ns/sosa/"/>
     <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
     <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
     <Prefix name="esadm" IRI="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"/>
     <Prefix name="escjr" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#"/>
     <Prefix name="esdir" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"/>
-    <Prefix name="esbici" IRI="http://vocab.linkeddata.es/datosabiertos/def/transporte/bicicleta-publica#"/>
-    <Prefix name="s4bldg" IRI="http://w3id.org/def/saref4bldg#"/>
     <Prefix name="schema" IRI="http://schema.org/"/>
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
-    <Prefix name="edintmi" IRI="http://vocab.linkeddata.es/datosabiertos/def/movilidadinteligente#"/>
-    <Prefix name="esequip" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#"/>
+    <Prefix name="edintinf" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#"/>
     <Prefix name="edintveh" IRI="http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#"/>
-    <Prefix name="esequip-kos" IRI="http://vocab.linkeddata.es/datosabiertos/kos/urbanismo-infraestructuras/equipamiento/tipo-equipamiento/"/>
+    <Prefix name="edintzone" IRI="http://vocab.linkeddata.es/datosabiertos/def/common/zone#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:created"/>
         <Literal>2026-03-03</Literal>
@@ -88,10 +83,10 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
         <Literal>0.1.0</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
+        <Class abbreviatedIRI="edintzone:RegulatedParkingZone"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone"/>
+        <Class abbreviatedIRI="edintzone:RegulatedZone"/>
     </Declaration>
     <Declaration>
         <Class IRI="#OffStreetParking"/>
@@ -115,10 +110,10 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
         <Class IRI="#ParkingSpotsByVehicleType"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"/>
+        <Class abbreviatedIRI="edintinf:Facility"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+        <Class abbreviatedIRI="edintinf:ObservationPoint"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="gsp:Feature"/>
@@ -160,7 +155,7 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
         <ObjectProperty IRI="#providesPublicService"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint"/>
+        <ObjectProperty abbreviatedIRI="edintinf:hasObservationPoint"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -226,14 +221,14 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="mod:createdWith"/>
+        <AnnotationProperty abbreviatedIRI="org:createdWith"/>
     </Declaration>
     <Declaration>
         <Datatype abbreviatedIRI="xsd:gYearMonth"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone"/>
+        <Class abbreviatedIRI="edintzone:RegulatedParkingZone"/>
+        <Class abbreviatedIRI="edintzone:RegulatedZone"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OffStreetParking"/>
@@ -245,10 +240,10 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Parking"/>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"/>
+        <Class abbreviatedIRI="edintinf:Facility"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+        <Class abbreviatedIRI="edintinf:ObservationPoint"/>
         <Class abbreviatedIRI="gsp:Feature"/>
     </SubClassOf>
     <SubObjectPropertyOf>
@@ -272,7 +267,7 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSensor"/>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+        <Class abbreviatedIRI="edintinf:ObservationPoint"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSpotsByParkingPermitType"/>
@@ -288,7 +283,7 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#providesPublicService"/>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"/>
+        <Class abbreviatedIRI="edintinf:Facility"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="edintveh:permitType"/>
@@ -328,11 +323,11 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfZone"/>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
+        <Class abbreviatedIRI="edintzone:RegulatedParkingZone"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint"/>
-        <Class IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
+        <ObjectProperty abbreviatedIRI="edintinf:hasObservationPoint"/>
+        <Class abbreviatedIRI="edintinf:ObservationPoint"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#numberOfParkingSpots"/>
@@ -348,42 +343,42 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedParkingZone</AbbreviatedIRI>
         <Literal xml:lang="en">Public road zone where parking is subject to time regulation, fee payment, or other restrictions.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedParkingZone</AbbreviatedIRI>
         <Literal xml:lang="es">Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedParkingZone</AbbreviatedIRI>
         <Literal xml:lang="en">Regulated parking zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedParkingZone</AbbreviatedIRI>
         <Literal xml:lang="es">Zona de estacionamiento regulado</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedZone</AbbreviatedIRI>
         <Literal xml:lang="es">Area a la que se aplica una regulacion o normativa particular.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedZone</AbbreviatedIRI>
         <Literal xml:lang="en">Area to which a particular regulation or policy applies.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedZone</AbbreviatedIRI>
         <Literal xml:lang="en">Regulated zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone</IRI>
+        <AbbreviatedIRI>edintzone:RegulatedZone</AbbreviatedIRI>
         <Literal xml:lang="es">Zona regulatoria</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -728,63 +723,63 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
-        <Literal xml:lang="es">Relación entre un elemento de la infraestructura y un punto de observación por algún sensor.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
-        <Literal xml:lang="en">Relationship between an infrastructure element and an observation point by some sensor.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
-        <Literal xml:lang="en">has observation point</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint</IRI>
-        <Literal xml:lang="es">tiene punto de observación</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <AbbreviatedIRI>edintinf:Facility</AbbreviatedIRI>
         <Literal xml:lang="es">Equipamientos a los que un ciudadano puede acudir pertenecientes a una organización pública o privadal. Un equipamiento puede ser un aparcamiento, un centro educativo, una estación de bicicleta compartida y cualquier instalación que sea un centro de salud, centro educativo, centro social, comisaría, entre otros.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <AbbreviatedIRI>edintinf:Facility</AbbreviatedIRI>
         <Literal xml:lang="en">Facilities that citizens can access and that belong to public or private organizations. A facility can be a parking lot, an educational center, a bike-sharing station, or any facility that serves as a health center, educational center, community center, police station, among others.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <AbbreviatedIRI>edintinf:Facility</AbbreviatedIRI>
         <Literal xml:lang="es">Equipamiento</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility</IRI>
+        <AbbreviatedIRI>edintinf:Facility</AbbreviatedIRI>
         <Literal xml:lang="en">Facility</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <AbbreviatedIRI>edintinf:ObservationPoint</AbbreviatedIRI>
         <Literal xml:lang="en">Points where access or counting observations can be made using sensors.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <AbbreviatedIRI>edintinf:ObservationPoint</AbbreviatedIRI>
         <Literal xml:lang="es">Puntos en donde se pueden realizar observaciones de acceso o de conteo a través de sensores.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <AbbreviatedIRI>edintinf:ObservationPoint</AbbreviatedIRI>
         <Literal xml:lang="en">Observation point</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint</IRI>
+        <AbbreviatedIRI>edintinf:ObservationPoint</AbbreviatedIRI>
         <Literal xml:lang="es">Punto de observación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>edintinf:hasObservationPoint</AbbreviatedIRI>
+        <Literal xml:lang="es">Relación entre un elemento de la infraestructura y un punto de observación por algún sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>edintinf:hasObservationPoint</AbbreviatedIRI>
+        <Literal xml:lang="en">Relationship between an infrastructure element and an observation point by some sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>edintinf:hasObservationPoint</AbbreviatedIRI>
+        <Literal xml:lang="en">has observation point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>edintinf:hasObservationPoint</AbbreviatedIRI>
+        <Literal xml:lang="es">tiene punto de observación</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

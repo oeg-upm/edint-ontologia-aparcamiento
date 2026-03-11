@@ -331,7 +331,7 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#isPartOfZone">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#OnStreetParking"/>
-        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"/>
         <rdfs:comment xml:lang="es">Relación entre un grupo de plazas de aparcamiento en la vía pública y la zona de estacionamiento regulado a la cual pertenecen.</rdfs:comment>
         <rdfs:comment xml:lang="en">Relationship between a group of parking spaces on a street and the regulated parking zone to which they belong.</rdfs:comment>
         <rdfs:label xml:lang="es">es parte de zona</rdfs:label>
@@ -353,10 +353,10 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint -->
 
 
-    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestrctura#hasObservationPoint">
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint">
         <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint"/>
         <rdfs:comment xml:lang="es">Relación entre un elemento de la infraestructura y un punto de observación por algún sensor.</rdfs:comment>
         <rdfs:comment xml:lang="en">Relationship between an infrastructure element and an observation point by some sensor.</rdfs:comment>
@@ -419,11 +419,11 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone -->
 
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedParkingZone">
-        <rdfs:subClassOf rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone"/>
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone">
+        <rdfs:subClassOf rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"/>
         <rdfs:comment xml:lang="en">Public road zone where parking is subject to time regulation, fee payment, or other restrictions.</rdfs:comment>
         <rdfs:comment xml:lang="es">Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones.</rdfs:comment>
         <rdfs:label xml:lang="en">Regulated parking zone</rdfs:label>
@@ -432,10 +432,10 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone -->
 
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/femp-base/zona#RegulatedZone">
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone">
         <rdfs:comment xml:lang="es">Area a la que se aplica una regulacion o normativa particular.</rdfs:comment>
         <rdfs:comment xml:lang="en">Area to which a particular regulation or policy applies.</rdfs:comment>
         <rdfs:label xml:lang="en">Regulated zone</rdfs:label>
