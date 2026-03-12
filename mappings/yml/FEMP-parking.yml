@@ -3,7 +3,7 @@ prefixes:
   schema: http://www.owl-ontologies.com/schema#
   geosparql: http://www.opengis.net/ont/geosparql#
   dct: http://purl.org/dc/terms/
-  edintapar: http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#
+  edintapar: http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#
 
 sources:
   parking-source: ['data.csv~csv']
@@ -30,8 +30,6 @@ mappings:
       - [edintinf:hasRegisteredOwner, "http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/$(pk)~iri"] # Organizacion
       - [schema:address, "http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/$(codigo_postal)~iri"] # Check FEMP-postalAddress.yml
       - [schema:openingHours,$(horario)]
-      - [edintinf:providesPublicService,"edintpublicservice:$(servicio)~iri"] # SKOS: complementaryservice, wifi, phonesupport, cafeteria , etc.
-      - [edintinf:offersRegularActivity,"edintregularact:$(actividad_regular)~iri"] #SKOS: culturalcenteract, exhibition, concert, theatre, workshop.
       - [edintinf:containsFacility,"http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/$(parent_equipamiento_municipal_id)~iri" ]
 
   locations:
