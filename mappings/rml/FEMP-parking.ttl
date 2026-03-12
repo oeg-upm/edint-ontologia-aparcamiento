@@ -236,6 +236,17 @@
 			a rr:ObjectMap;
 			rml:reference "pk";
 		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant geosparql:asWKT;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "POINT ({longitud} {latitud})";
+			rr:datatype geosparql:wktLiteral
+		];
 	].
 
 
