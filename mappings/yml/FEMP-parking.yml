@@ -1,0 +1,44 @@
+prefixes:
+  edintinf: http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#
+  schema: http://www.owl-ontologies.com/schema#
+  geosparql: http://www.opengis.net/ont/geosparql#
+  dct: http://purl.org/dc/terms/
+  edintapar: http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#
+
+sources:
+  parking-source: ['data.csv~csv']
+  facility-source: ['data.csv~csv']
+
+mappings:
+  parking:
+    sources:
+      - parking-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/parking/$(pk)
+    po:
+      - [a, edintapar:OnStreetParking]
+      - [edintapar:hasParkingFee,"http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/$(identificador_tarifa)~iri"]
+      - [edintapar:hasSpotsByParkingPermitType,"http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/$(identificador_plaza)~iri" ]
+      - [edintapar:hasSpotsByVehicleType, "http://vocab.linkeddata.es/datosabiertos/recurso/plazas-por-aparcamiento/$(identificador_plazas)~iri"]
+      - [edintapar:isPartOfZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona-regulatoria/$(identificador_zona)~iri"]
+      - [dct:identifier,"$(pk)"]
+      - [rdfs:label, "$(nombre)"]
+      - [rdfs:comment, $(descripcion_entidad)]
+      - [geosparql:hasGeometry, "http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/$(pk)~iri"]
+      - [edintinf:belongsTo, "http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/barrio/$(barrio)~iri"] # Otros e.g territorio/Comarca/D.C._Zaragoza, sector-publico/territorio/Provincia/Zaragoza
+      - [edintinf:hasObservationPoint, "http://vocab.linkeddata.es/datosabiertos/recurso/punto-de-observacion/$(punto_observ_id)~iri"] # Check FEMP-observationPoint.yml
+      - [edintinf:hasInfrastructureType, "edintkos:$(tipo)~iri"] # SKOS tipo_infraestructura
+      - [edintinf:hasRegisteredOwner, "http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/$(pk)~iri"] # Organizacion
+      - [schema:address, "http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/$(codigo_postal)~iri"] # Check FEMP-postalAddress.yml
+      - [schema:openingHours,$(horario)]
+      - [edintinf:providesPublicService,"edintpublicservice:$(servicio)~iri"] # SKOS: complementaryservice, wifi, phonesupport, cafeteria , etc.
+      - [edintinf:offersRegularActivity,"edintregularact:$(actividad_regular)~iri"] #SKOS: culturalcenteract, exhibition, concert, theatre, workshop.
+      - [edintinf:containsFacility,"http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/$(parent_equipamiento_municipal_id)~iri" ]
+
+  locations:
+    sources:
+      - facility-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/$(pk)
+    po:
+      - [a, geosparql:Geometry]
+      - [dct:identifier,"$(pk)"]
+#      - [geosparql:asWKT, "POINT ($(longitud) $(latitud))", geosparql:wktLiteral]
