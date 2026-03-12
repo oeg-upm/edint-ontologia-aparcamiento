@@ -6,5 +6,60 @@ Figura 1. Modelo conceptual de la ontología</figcaption></center></p>
 Los aparcamientos son una (sub)clase de <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility">Equipamiento</a> que, a su vez, pueden <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint">tener</a> <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint">puntos de observación</a>. Esta clase y propiedad están descritas en la <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#">Ontología para la representación de la infraestructura de un municipio</a>.
 Existen dos (sub)clases de aparcamiento: los que son  <a href="#OnStreetParking">aparcamientos en la vía pública</a>  y los  <a href="#OffStreetParking">aparcamientos fuera de la vía pública</a>. Los aparcamientos en la vía pública pueden ser  <a href="#isPartOfZone">parte de una</a> <a href="#http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone">zona regulatoria de aparcamiento</a>   , que es una (sub)clase de <a href="#http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone">zona regulatoria</a> .
 Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSpot">plazas de aparcamiento</a> que se pueden agrupar según el  <a href="#http://vocab.linkeddata.es/datosabiertos/kos/edint/PermitType">tipo de permiso</a>, por ejemplo existen grupos de plazas para residentes, personas de movilidad reducida, etc. También se agrupan por <a href="#http://vocab.linkeddata.es/datosabiertos/kos/edint/VehicleType">tipo de vehículo</a>, por ejemplo plazas para coches, para motocicletas, etc. Estas dos taxonomías han sido definidas en la <a href="http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#">Ontología para la representación del censo o registro de vehículos</a>.</p>
+<pre><textarea style="resize:none" readonly id="code2" name="code" rows="25" cols="100">
+@prefix comp: &lt;http://semweb.mmlab.be/ns/rml-compression#&gt; .
+@prefix d2rq: &lt;http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix edintapar: &lt;http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#&gt; .
+
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/parking-mad-101&gt; a edintapar:OnStreetParking;
+  dct:identifier "parking-mad-101";
+  &lt;http://schema.org/address&gt; &lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt;;
+  &lt;http://schema.org/openingHours&gt; "Mo-Fr 09:00-21:00; Sa 09:00-15:00";
+  edintapar:belongsTo &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/barrio/salamanca&gt;;
+  edintapar:containsFacility &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/mun-mad-04&gt;;
+  edintapar:hasInfrastructureType &lt;edintkos:parking-superficie&gt;;
+  edintapar:hasObservationPoint &lt;http://vocab.linkeddata.es/datosabiertos/recurso/punto-de-observacion/obs-mad-99&gt;;
+  edintapar:hasParkingFee &lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/ser-azul-distrito4&gt;;
+  edintapar:hasRegisteredOwner &lt;http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/parking-mad-101&gt;;
+  edintapar:hasSpotsByParkingPermitType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/plaza-azul&gt;;
+  edintapar:hasSpotsByVehicleType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas-por-aparcamiento/count-m-101&gt;;
+  edintapar:isPartOfZone &lt;http://vocab.linkeddata.es/datosabiertos/recurso/zona-regulatoria/ser-salamanca&gt;;
+  geosparql:hasGeometry &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-101&gt;;
+  rdfs:comment "SER Madrid - Zona Azul de rotación en Distrito Salamanca.";
+  rdfs:label "Parking Calle Serrano" .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/parking-mad-102&gt; a edintapar:OnStreetParking;
+  dct:identifier "parking-mad-102";
+  &lt;http://schema.org/address&gt; &lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28014&gt;;
+  &lt;http://schema.org/openingHours&gt; "Mo-Fr 09:00-21:00; Sa 09:00-15:00";
+  edintapar:belongsTo &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/barrio/retiro&gt;;
+  edintapar:containsFacility &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/mun-mad-03&gt;;
+  edintapar:hasInfrastructureType &lt;edintkos:parking-superficie&gt;;
+  edintapar:hasObservationPoint &lt;http://vocab.linkeddata.es/datosabiertos/recurso/punto-de-observacion/obs-mad-100&gt;;
+  edintapar:hasParkingFee &lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/ser-verde-distrito3&gt;;
+  edintapar:hasRegisteredOwner &lt;http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/parking-mad-102&gt;;
+  edintapar:hasSpotsByParkingPermitType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/plaza-verde&gt;;
+  edintapar:hasSpotsByVehicleType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas-por-aparcamiento/count-m-102&gt;;
+  edintapar:isPartOfZone &lt;http://vocab.linkeddata.es/datosabiertos/recurso/zona-regulatoria/ser-retiro&gt;;
+  geosparql:hasGeometry &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-102&gt;;
+  rdfs:comment "SER Madrid - Zona Verde preferente residentes frente al Retiro.";
+  rdfs:label "Parking Calle Alfonso XII" .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-101&gt;
+  a geosparql:Geometry;
+  dct:identifier "parking-mad-101" .
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-102&gt;
+  a geosparql:Geometry;
+  dct:identifier "parking-mad-102" .
+</textarea></pre>
+<script>
+    var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+</script>
+
 </span>
 
