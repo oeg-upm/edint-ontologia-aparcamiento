@@ -39,4 +39,4 @@ mappings:
     po:
       - [a, geosparql:Geometry]
       - [dct:identifier,"$(pk)"]
-#      - [geosparql:asWKT, "POINT ($(longitud) $(latitud))", geosparql:wktLiteral]
+      - [geosparql:asWKT, "POINT ($(longitud) $(latitud))", geosparql:wktLiteral]
