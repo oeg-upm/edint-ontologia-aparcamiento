@@ -11,48 +11,83 @@ Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSp
 @prefix d2rq: &lt;http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#&gt; .
 @prefix dct: &lt;http://purl.org/dc/terms/&gt; .
 @prefix edintapar: &lt;http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#&gt; .
+@prefix edintinf: &lt;http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#&gt; .
+@prefix edintveh: &lt;http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#&gt; .
+@prefix esadm: &lt;http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#&gt; .
+@prefix escjr: &lt;http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#&gt; .
+@prefix esdir: &lt;http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#&gt; .
+@prefix fnml: &lt;http://semweb.mmlab.be/ns/fnml#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix formats: &lt;http://www.w3.org/ns/formats/&gt; .
+@prefix geosparql: &lt;http://www.opengis.net/ont/geosparql#&gt; .
+@prefix grel: &lt;http://users.ugent.be/~bjdmeest/function/grel.ttl#&gt; .
+@prefix ql: &lt;http://semweb.mmlab.be/ns/ql#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix rml: &lt;http://semweb.mmlab.be/ns/rml#&gt; .
+@prefix rr: &lt;http://www.w3.org/ns/r2rml#&gt; .
+@prefix schema: &lt;http://www.owl-ontologies.com/schema#&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt; a esdir:DireccionPostal;
+  escjr:contieneVia &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;;
+  rdfs:label "Calle de Serrano 10, Madrid" .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/parking-mad-101&gt; a edintapar:OnStreetParking;
-  dct:identifier "parking-mad-101";
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/P001&gt;
+  a geosparql:Geometry;
+  dct:identifier "P001";
+  geosparql:asWKT "POINT (-3.6862 40.4306)"^^geosparql:wktLiteral .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/grupo-plazas-por-vehiculos/GVEH001&gt;
+  a edintapar:SpotsByVehicleType;
+  edintveh:vehicleType &lt;edintkos:car&gt;;
+  edintapar:numberOfSpots "20" .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/P001&gt; a edintapar:OnStreetParking;
+  dct:identifier "P001";
   &lt;http://schema.org/address&gt; &lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt;;
-  &lt;http://schema.org/openingHours&gt; "Mo-Fr 09:00-21:00; Sa 09:00-15:00";
-  edintapar:belongsTo &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/barrio/salamanca&gt;;
-  edintapar:containsFacility &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/mun-mad-04&gt;;
-  edintapar:hasInfrastructureType &lt;edintkos:parking-superficie&gt;;
-  edintapar:hasObservationPoint &lt;http://vocab.linkeddata.es/datosabiertos/recurso/punto-de-observacion/obs-mad-99&gt;;
-  edintapar:hasParkingFee &lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/ser-azul-distrito4&gt;;
-  edintapar:hasRegisteredOwner &lt;http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/parking-mad-101&gt;;
-  edintapar:hasSpotsByParkingPermitType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/plaza-azul&gt;;
-  edintapar:hasSpotsByVehicleType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas-por-aparcamiento/count-m-101&gt;;
-  edintapar:isPartOfZone &lt;http://vocab.linkeddata.es/datosabiertos/recurso/zona-regulatoria/ser-salamanca&gt;;
-  geosparql:hasGeometry &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-101&gt;;
-  rdfs:comment "SER Madrid - Zona Azul de rotación en Distrito Salamanca.";
-  rdfs:label "Parking Calle Serrano" .
+  &lt;http://schema.org/openingHours&gt; "Mo-Fr 09:00-18:00";
+  edintapar:hasParkingFee &lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/TAR001&gt;;
+  edintapar:hasParkingSpot &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt;;
+  edintapar:hasSpotsByParkingPermitType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt;;
+  edintapar:hasSpotsByVehicleType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas/GRP001&gt;;
+  edintapar:isPartOfZone &lt;http://vocab.linkeddata.es/datosabiertos/recurso/zona-regulatoria/ZONA_SER_01&gt;;
+  edintinf:belongsTo &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/barrio/Salamanca&gt;;
+  edintinf:hasInfrastructureType &lt;edintkos:onStreetParking&gt;;
+  edintinf:hasRegisteredOwner &lt;http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/P001&gt;;
+  geosparql:hasGeometry &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/P001&gt;;
+  rdfs:comment "Zona SER tramo inicial Serrano";
+  rdfs:label "Aparcamiento Serrano TR1" .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/parking-mad-102&gt; a edintapar:OnStreetParking;
-  dct:identifier "parking-mad-102";
-  &lt;http://schema.org/address&gt; &lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28014&gt;;
-  &lt;http://schema.org/openingHours&gt; "Mo-Fr 09:00-21:00; Sa 09:00-15:00";
-  edintapar:belongsTo &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/barrio/retiro&gt;;
-  edintapar:containsFacility &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/mun-mad-03&gt;;
-  edintapar:hasInfrastructureType &lt;edintkos:parking-superficie&gt;;
-  edintapar:hasObservationPoint &lt;http://vocab.linkeddata.es/datosabiertos/recurso/punto-de-observacion/obs-mad-100&gt;;
-  edintapar:hasParkingFee &lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/ser-verde-distrito3&gt;;
-  edintapar:hasRegisteredOwner &lt;http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/parking-mad-102&gt;;
-  edintapar:hasSpotsByParkingPermitType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/plaza-verde&gt;;
-  edintapar:hasSpotsByVehicleType &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas-por-aparcamiento/count-m-102&gt;;
-  edintapar:isPartOfZone &lt;http://vocab.linkeddata.es/datosabiertos/recurso/zona-regulatoria/ser-retiro&gt;;
-  geosparql:hasGeometry &lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-102&gt;;
-  rdfs:comment "SER Madrid - Zona Verde preferente residentes frente al Retiro.";
-  rdfs:label "Parking Calle Alfonso XII" .
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt; a edintapar:ParkingSpot;
+  dct:identifier "1";
+  rdfs:label "Residente L-V 9-18h" .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-101&gt;
-  a geosparql:Geometry;
-  dct:identifier "parking-mad-101" .
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/parking-mad-102&gt;
-  a geosparql:Geometry;
-  dct:identifier "parking-mad-102" .
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas/GRP001&gt; a edintapar:ParkingSpotsByPermitType;
+  edintapar:hasParkingSpot &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt;;
+  edintinf:numberOfPaarkingSpots "25";
+  edintinf:permitType &lt;edintkos:Residente&gt; .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/TAR001&gt; a edintapar:ParkingFee;
+  &lt;http://schema.org/description&gt; "Vehículos con distintivo B o C";
+  &lt;http://schema.org/name&gt; "Tarifa estándar SER";
+  &lt;http://schema.org/price&gt; "2.5";
+  &lt;http://schema.org/priceCurrency&gt; "EUR" .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;
+  a escjr:Via;
+  dct:identifier "CL001";
+  esadm:municipio &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/Municipio/Madrid&gt;;
+  escjr:contieneTramoVia &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/TramoCalle/TR001&gt;;
+  escjr:tipoVia &lt;http://vocab.linkeddata.es/datosabiertos/kos/urbanismo-infraestructuras/tipo-via/calle&gt; .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/TramoCalle/TR001&gt;
+  a escjr:TramoVia;
+  esadm:municipio &lt;http://vocab.linkeddata.es/datosabiertos/recurso/sector-publico/territorio/Municipio/Madrid&gt;;
+  escjr:numeroFinTramo "60";
+  escjr:numeroInicioTramo "1";
+  escjr:via &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt; .
 </textarea></pre>
 <script>
     var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
