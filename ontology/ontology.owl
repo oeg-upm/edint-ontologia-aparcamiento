@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento"
      versionIRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento/0.1.0">
-    <Prefix name="" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#"/>
+    <Prefix name="" IRI="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento"/>
     <Prefix name="gsp" IRI="http://www.opengis.net/ont/geosparql#"/>
     <Prefix name="org" IRI="https://w3id.org/mod#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -261,6 +261,7 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasParkingSpot"/>
         <ObjectUnionOf>
+            <Class IRI="#Parking"/>
             <Class IRI="#ParkingSpotsByPermitType"/>
             <Class IRI="#ParkingSpotsByVehicleType"/>
         </ObjectUnionOf>

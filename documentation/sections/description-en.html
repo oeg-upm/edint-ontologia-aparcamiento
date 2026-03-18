@@ -1,6 +1,15 @@
-<h2 id="desc" class="list">infraestructurapublica: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="desc" class="list">Parking: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+<p>Figure 1 shows the conceptual model of the ontology with its classes and relationships (object properties).</p>
+<p><center><img src="images/diagrama-conceptual.png"/><figcaption>
+Figura 1. Conceptual model</figcaption></center></p>
+A <a href="#Parking">parking lot</a> is a place where vehicles can be temporarily parked by paying the <a href="#ParkingFee">fee</a> that <a href="#hasParkingFee">has</a> charges.
+
+Parking lots are a (sub)class of <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility">Equipment</a> which, in turn, can <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint">have</a> <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint">observation points</a>. This class and property are described in the <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#">Ontology for the representation of a municipality's infrastructure</a>.
+
+There are two (sub)classes of parking: those that are <a href="#OnStreetParking">on-street parking</a> and those that are <a href="#OffStreetParking">off-street parking</a>. On-street parking can be <a href="#isPartOfZone">part of a</a> <a href="#http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone">regulated parking zone</a>, which is a (sub)class of <a href="#http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone">regulated zone</a>.
+
+All parking areas have parking spaces that can be grouped according to the type of permit; for example, there are groups of spaces for residents, people with reduced mobility, etc. They are also grouped by the type of vehicle, for example, spaces for cars, for motorcycles, etc. These two taxonomies have been defined in the Ontology for the representation of the census or register of vehicles.</span>
 
 <pre><textarea style="resize:none" readonly id="code2" name="code" rows="25" cols="100">
 @prefix comp: &lt;http://semweb.mmlab.be/ns/rml-compression#&gt; .
@@ -26,19 +35,6 @@ This is a placeholder text for the description of your ontology. The description
 @prefix void: &lt;http://rdfs.org/ns/void#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt; a esdir:DireccionPostal;
-  escjr:contieneVia &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;;
-  rdfs:label "Calle de Serrano 10, Madrid" .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/P001&gt;
-  a geosparql:Geometry;
-  dct:identifier "P001";
-  geosparql:asWKT "POINT (-3.6862 40.4306)"^^geosparql:wktLiteral .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/grupo-plazas-por-vehiculos/GVEH001&gt;
-  a edintapar:SpotsByVehicleType;
-  edintveh:vehicleType &lt;edintkos:car&gt;;
-  edintapar:numberOfSpots "20" .
 
 &lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/P001&gt; a edintapar:OnStreetParking;
   dct:identifier "P001";
@@ -56,20 +52,9 @@ This is a placeholder text for the description of your ontology. The description
   rdfs:comment "Zona SER tramo inicial Serrano";
   rdfs:label "Aparcamiento Serrano TR1" .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt; a edintapar:ParkingSpot;
-  dct:identifier "1";
-  rdfs:label "Residente L-V 9-18h" .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas/GRP001&gt; a edintapar:ParkingSpotsByPermitType;
-  edintapar:hasParkingSpot &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt;;
-  edintinf:numberOfPaarkingSpots "25";
-  edintinf:permitType &lt;edintkos:Residente&gt; .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/TAR001&gt; a edintapar:ParkingFee;
-  &lt;http://schema.org/description&gt; "Vehículos con distintivo B o C";
-  &lt;http://schema.org/name&gt; "Tarifa estándar SER";
-  &lt;http://schema.org/price&gt; "2.5";
-  &lt;http://schema.org/priceCurrency&gt; "EUR" .
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt; a esdir:DireccionPostal;
+  escjr:contieneVia &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;;
+  rdfs:label "Calle de Serrano 10, Madrid" .
 
 &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;
   a escjr:Via;
@@ -84,6 +69,26 @@ This is a placeholder text for the description of your ontology. The description
   escjr:numeroFinTramo "60";
   escjr:numeroInicioTramo "1";
   escjr:via &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt; .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/P001&gt;
+  a geosparql:Geometry;
+  dct:identifier "P001";
+  geosparql:asWKT "POINT (-3.6862 40.4306)"^^geosparql:wktLiteral .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/grupo-plazas-por-vehiculos/GVEH001&gt;
+  a edintapar:SpotsByVehicleType;
+  edintveh:vehicleType &lt;edintkos:car&gt;;
+  edintapar:numberOfSpots "20" .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas/GRP001&gt; a edintapar:ParkingSpotsByPermitType;
+  edintinf:numberOfParkingSpots "25";
+  edintinf:permitType &lt;edintkos:Residente&gt; .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/TAR001&gt; a edintapar:ParkingFee;
+  &lt;http://schema.org/description&gt; "Vehículos con distintivo B o C";
+  &lt;http://schema.org/name&gt; "Tarifa estándar SER";
+  &lt;http://schema.org/price&gt; "2.5";
+  &lt;http://schema.org/priceCurrency&gt; "EUR" .
 </textarea></pre>
 <script>
     var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
@@ -91,3 +96,5 @@ This is a placeholder text for the description of your ontology. The description
         matchBrackets: true
     });
 </script>
+<p>The example above shows the data for an on-street parking lot with the identifier "P001". The parking lot has a rate of €2.50 per hour for vehicles with "B" or "C" environmental stickers. It is located on a section of Serrano Street in the Salamanca district of Madrid. The rate applies during specific hours, it is part of the SER Zone "001", and it is managed by the Madrid City Council. It has a total of 25 spaces for residents.</p>
+</scope>

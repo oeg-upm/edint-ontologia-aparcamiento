@@ -270,6 +270,7 @@ Los aparcamientos son una intalación más de la infraestructura de la ciudad po
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#Parking"/>
                     <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#ParkingSpotsByPermitType"/>
                     <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#ParkingSpotsByVehicleType"/>
                 </owl:unionOf>

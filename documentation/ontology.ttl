@@ -158,7 +158,8 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#hasParkingSpot
 :hasParkingSpot rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :ParkingSpotsByPermitType
+                              owl:unionOf ( :Parking
+                                            :ParkingSpotsByPermitType
                                             :ParkingSpotsByVehicleType
                                           )
                             ] ;

@@ -2,7 +2,7 @@
 <span class="markdown"><p>En la Figura 1 se muestra el modelo conceptual de la ontología con sus clases y relaciones (propiedades de objeto).</p>
 <p><center><img src="images/diagrama-conceptual.png"/><figcaption>
 Figura 1. Modelo conceptual de la ontología</figcaption></center></p>
-<p>Un <a href="#Parking">aparcamiento</a> es un lugar donde se pueden colocar transitoriamente vehículos abonando la  <a href="#ParkingFee">tarifa</a> que <a href="#hasParkingFee">tienen</a>.
+<p>Un <a href="#Parking">aparcamiento</a> es un lugar donde se pueden colocar transitoriamente vehículos abonando la  <a href="#ParkingFee">tarifa</a> que <a href="#hasParkingFee">tiene el aparcamiento</a>.
 Los aparcamientos son una (sub)clase de <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility">Equipamiento</a> que, a su vez, pueden <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#hasObservationPoint">tener</a> <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#ObservationPoint">puntos de observación</a>. Esta clase y propiedad están descritas en la <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#">Ontología para la representación de la infraestructura de un municipio</a>.
 Existen dos (sub)clases de aparcamiento: los que son  <a href="#OnStreetParking">aparcamientos en la vía pública</a>  y los  <a href="#OffStreetParking">aparcamientos fuera de la vía pública</a>. Los aparcamientos en la vía pública pueden ser  <a href="#isPartOfZone">parte de una</a> <a href="#http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone">zona regulatoria de aparcamiento</a>   , que es una (sub)clase de <a href="#http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone">zona regulatoria</a> .
 Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSpot">plazas de aparcamiento</a> que se pueden agrupar según el  <a href="#http://vocab.linkeddata.es/datosabiertos/kos/edint/PermitType">tipo de permiso</a>, por ejemplo existen grupos de plazas para residentes, personas de movilidad reducida, etc. También se agrupan por <a href="#http://vocab.linkeddata.es/datosabiertos/kos/edint/VehicleType">tipo de vehículo</a>, por ejemplo plazas para coches, para motocicletas, etc. Estas dos taxonomías han sido definidas en la <a href="http://vocab.linkeddata.es/datosabiertos/def/transporte/censovehiculos#">Ontología para la representación del censo o registro de vehículos</a>.</p>
@@ -30,20 +30,6 @@ Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSp
 @prefix void: &lt;http://rdfs.org/ns/void#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt; a esdir:DireccionPostal;
-  escjr:contieneVia &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;;
-  rdfs:label "Calle de Serrano 10, Madrid" .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/P001&gt;
-  a geosparql:Geometry;
-  dct:identifier "P001";
-  geosparql:asWKT "POINT (-3.6862 40.4306)"^^geosparql:wktLiteral .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/grupo-plazas-por-vehiculos/GVEH001&gt;
-  a edintapar:SpotsByVehicleType;
-  edintveh:vehicleType &lt;edintkos:car&gt;;
-  edintapar:numberOfSpots "20" .
-
 &lt;http://vocab.linkeddata.es/datosabiertos/recurso/parking/P001&gt; a edintapar:OnStreetParking;
   dct:identifier "P001";
   &lt;http://schema.org/address&gt; &lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt;;
@@ -60,20 +46,9 @@ Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSp
   rdfs:comment "Zona SER tramo inicial Serrano";
   rdfs:label "Aparcamiento Serrano TR1" .
 
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt; a edintapar:ParkingSpot;
-  dct:identifier "1";
-  rdfs:label "Residente L-V 9-18h" .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas/GRP001&gt; a edintapar:ParkingSpotsByPermitType;
-  edintapar:hasParkingSpot &lt;http://vocab.linkeddata.es/datosabiertos/recurso/plaza-aparcamiento/PLZ001&gt;;
-  edintinf:numberOfPaarkingSpots "25";
-  edintinf:permitType &lt;edintkos:Residente&gt; .
-
-&lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/TAR001&gt; a edintapar:ParkingFee;
-  &lt;http://schema.org/description&gt; "Vehículos con distintivo B o C";
-  &lt;http://schema.org/name&gt; "Tarifa estándar SER";
-  &lt;http://schema.org/price&gt; "2.5";
-  &lt;http://schema.org/priceCurrency&gt; "EUR" .
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/direccion-postal/28001&gt; a esdir:DireccionPostal;
+  escjr:contieneVia &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;;
+  rdfs:label "Calle de Serrano 10, Madrid" .
 
 &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt;
   a escjr:Via;
@@ -88,6 +63,26 @@ Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSp
   escjr:numeroFinTramo "60";
   escjr:numeroInicioTramo "1";
   escjr:via &lt;http://vocab.linkeddata.es/datosabiertos/recurso/urbanismo-infraestructuras/callejero/Calle/Serrano&gt; .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/equipamiento-municipal/locations/P001&gt;
+  a geosparql:Geometry;
+  dct:identifier "P001";
+  geosparql:asWKT "POINT (-3.6862 40.4306)"^^geosparql:wktLiteral .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/grupo-plazas-por-vehiculos/GVEH001&gt;
+  a edintapar:SpotsByVehicleType;
+  edintveh:vehicleType &lt;edintkos:car&gt;;
+  edintapar:numberOfSpots "20" .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/plazas/GRP001&gt; a edintapar:ParkingSpotsByPermitType;
+  edintinf:numberOfParkingSpots "25";
+  edintinf:permitType &lt;edintkos:Residente&gt; .
+
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/tarifa-aparcamiento/TAR001&gt; a edintapar:ParkingFee;
+  &lt;http://schema.org/description&gt; "Vehículos con distintivo B o C";
+  &lt;http://schema.org/name&gt; "Tarifa estándar SER";
+  &lt;http://schema.org/price&gt; "2.5";
+  &lt;http://schema.org/priceCurrency&gt; "EUR" .
 </textarea></pre>
 <script>
     var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
@@ -95,6 +90,6 @@ Todos los aparcamientos <a href="#hasParkingSpot">tienen</a> <a href="#ParkingSp
         matchBrackets: true
     });
 </script>
-
+<p>El ejemplo anterior muestra los datos de un aparcamiento en la vía pública con identificador "P001". El aparcamiento tiene una tarifa para vehículos con distintivo "B" o "C" de 2,50 euros por hora. Corresponde a un tramo de la calle Serrano del Barrio de Salamanca en Madrid. Tiene un horario en el cual se aplica la tarifa, es parte de la Zona SER "001" y la organización que lo gestiona es el Ayuntamiento de Madrid. Tiene un total de 25 plazas para residentes. </p>
 </span>
 
