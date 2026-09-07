@@ -7,7 +7,7 @@ The Parking Ontology represents data of public and private parking lots in a mun
 The purpose of this ontology is to provide a common vocabulary for representing the main entities and data of parking lots in a municipality. Its scope is limited to data that can be used for the purposes of maintaining and accessing the parking inventory, as well as managing its mobility (vehicle access to parking), which are part of the usual functions of local entities.
 
 # Prefix and namespace
-The prefix of the Parking Ontology is: edintinfp and it is published in the namespace: [http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#](http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#)
+The prefix of the Parking Ontology is: edintapar and it is published in the namespace: [http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#](http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/aparcamiento#)
 
 # Ontology conceptualization
 ![General conceptual model](diagrams/diagram.png)
